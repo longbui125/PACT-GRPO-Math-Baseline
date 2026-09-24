@@ -1,0 +1,9 @@
+{
+  "seeds": [42],
+  "sft_epochs": 2,
+  "rl_groups": 200,
+  "checkpoint_every": 100,
+  "min_easy_zero_validation_accuracy": 0.80,
+  "min_calibrated_anchors": 40,
+  "methods": ["grpo", "dr_grpo", "dapo", "pact_grpo"]
+}

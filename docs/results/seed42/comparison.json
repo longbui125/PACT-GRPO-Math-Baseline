@@ -1,0 +1,306 @@
+{
+  "rows": [
+    {
+      "seed": 42,
+      "method": "initial",
+      "hard_correct": 165,
+      "hard_total": 200,
+      "hard_accuracy": 0.825,
+      "easy_zero_correct": 186,
+      "easy_zero_total": 200,
+      "easy_zero_rejection": 0.93,
+      "easy_one_accuracy": 0.96,
+      "easy_two_accuracy": 0.58,
+      "easy_zero_false_acceptance": 0.06999999999999995,
+      "train_seconds": 471.2736666202545,
+      "rollout_tokens": null,
+      "sampled_groups": null,
+      "optimizer_updates": null,
+      "projected_steps": null,
+      "hard_gain_pp": 0.0,
+      "easy_zero_change_pp": 0.0,
+      "adaptation_with_forgetting": false
+    },
+    {
+      "seed": 42,
+      "method": "grpo",
+      "hard_correct": 185,
+      "hard_total": 200,
+      "hard_accuracy": 0.925,
+      "easy_zero_correct": 170,
+      "easy_zero_total": 200,
+      "easy_zero_rejection": 0.85,
+      "easy_one_accuracy": 0.93,
+      "easy_two_accuracy": 0.24,
+      "easy_zero_false_acceptance": 0.15000000000000002,
+      "train_seconds": 200.68942022323608,
+      "rollout_tokens": 2998,
+      "sampled_groups": 200,
+      "optimizer_updates": 36,
+      "projected_steps": 0,
+      "hard_gain_pp": 10.000000000000009,
+      "easy_zero_change_pp": -8.000000000000007,
+      "adaptation_with_forgetting": true
+    },
+    {
+      "seed": 42,
+      "method": "dr_grpo",
+      "hard_correct": 187,
+      "hard_total": 200,
+      "hard_accuracy": 0.935,
+      "easy_zero_correct": 154,
+      "easy_zero_total": 200,
+      "easy_zero_rejection": 0.77,
+      "easy_one_accuracy": 0.95,
+      "easy_two_accuracy": 0.24,
+      "easy_zero_false_acceptance": 0.22999999999999998,
+      "train_seconds": 197.16672730445862,
+      "rollout_tokens": 2985,
+      "sampled_groups": 200,
+      "optimizer_updates": 34,
+      "projected_steps": 0,
+      "hard_gain_pp": 11.00000000000001,
+      "easy_zero_change_pp": -16.000000000000004,
+      "adaptation_with_forgetting": true
+    },
+    {
+      "seed": 42,
+      "method": "dapo",
+      "hard_correct": 197,
+      "hard_total": 200,
+      "hard_accuracy": 0.985,
+      "easy_zero_correct": 84,
+      "easy_zero_total": 200,
+      "easy_zero_rejection": 0.42,
+      "easy_one_accuracy": 0.95,
+      "easy_two_accuracy": 0.16,
+      "easy_zero_false_acceptance": 0.5800000000000001,
+      "train_seconds": 335.4039087295532,
+      "rollout_tokens": 21917,
+      "sampled_groups": 1498,
+      "optimizer_updates": 82,
+      "projected_steps": 0,
+      "hard_gain_pp": 16.000000000000004,
+      "easy_zero_change_pp": -51.0,
+      "adaptation_with_forgetting": true
+    },
+    {
+      "seed": 42,
+      "method": "pact_grpo",
+      "hard_correct": 174,
+      "hard_total": 200,
+      "hard_accuracy": 0.87,
+      "easy_zero_correct": 191,
+      "easy_zero_total": 200,
+      "easy_zero_rejection": 0.955,
+      "easy_one_accuracy": 0.94,
+      "easy_two_accuracy": 0.26,
+      "easy_zero_false_acceptance": 0.04500000000000004,
+      "train_seconds": 210.69979810714722,
+      "rollout_tokens": 2971,
+      "sampled_groups": 200,
+      "optimizer_updates": 30,
+      "projected_steps": 8,
+      "hard_gain_pp": 4.5000000000000036,
+      "easy_zero_change_pp": 2.499999999999991,
+      "adaptation_with_forgetting": false
+    }
+  ],
+  "mean_by_method": {
+    "initial": {
+      "hard_accuracy": 0.825,
+      "easy_zero_rejection": 0.93,
+      "hard_gain_pp": 0.0,
+      "easy_zero_change_pp": 0.0
+    },
+    "grpo": {
+      "hard_accuracy": 0.925,
+      "easy_zero_rejection": 0.85,
+      "hard_gain_pp": 10.000000000000009,
+      "easy_zero_change_pp": -8.000000000000007
+    },
+    "dr_grpo": {
+      "hard_accuracy": 0.935,
+      "easy_zero_rejection": 0.77,
+      "hard_gain_pp": 11.00000000000001,
+      "easy_zero_change_pp": -16.000000000000004
+    },
+    "dapo": {
+      "hard_accuracy": 0.985,
+      "easy_zero_rejection": 0.42,
+      "hard_gain_pp": 16.000000000000004,
+      "easy_zero_change_pp": -51.0
+    },
+    "pact_grpo": {
+      "hard_accuracy": 0.87,
+      "easy_zero_rejection": 0.955,
+      "hard_gain_pp": 4.5000000000000036,
+      "easy_zero_change_pp": 2.499999999999991
+    }
+  },
+  "per_seed": {
+    "42": {
+      "validation_curves": {
+        "initial": [
+          {
+            "step": 0,
+            "rollout_tokens": 0,
+            "easy_zero_rejection": 0.9375,
+            "hard_accuracy": 0.81
+          }
+        ],
+        "grpo": [
+          {
+            "step": 100,
+            "rollout_tokens": 1546,
+            "easy_zero_rejection": 0.8625,
+            "hard_accuracy": 0.89
+          },
+          {
+            "step": 200,
+            "rollout_tokens": 2998,
+            "easy_zero_rejection": 0.85,
+            "hard_accuracy": 0.9
+          }
+        ],
+        "dr_grpo": [
+          {
+            "step": 100,
+            "rollout_tokens": 1543,
+            "easy_zero_rejection": 0.8625,
+            "hard_accuracy": 0.89
+          },
+          {
+            "step": 200,
+            "rollout_tokens": 2985,
+            "easy_zero_rejection": 0.7875,
+            "hard_accuracy": 0.9
+          }
+        ],
+        "dapo": [
+          {
+            "step": 200,
+            "rollout_tokens": 21917,
+            "easy_zero_rejection": 0.4625,
+            "hard_accuracy": 0.98
+          }
+        ],
+        "pact_grpo": [
+          {
+            "step": 100,
+            "rollout_tokens": 1538,
+            "easy_zero_rejection": 0.9125,
+            "hard_accuracy": 0.86
+          },
+          {
+            "step": 200,
+            "rollout_tokens": 2971,
+            "easy_zero_rejection": 0.9375,
+            "hard_accuracy": 0.88
+          }
+        ]
+      },
+      "paired": {
+        "grpo": {
+          "easy": {
+            "right_only_correct": 1,
+            "left_only_correct": 37
+          },
+          "hard": {
+            "right_only_correct": 25,
+            "left_only_correct": 5
+          },
+          "easy_zero": {
+            "right_only_correct": 0,
+            "left_only_correct": 16
+          }
+        },
+        "dr_grpo": {
+          "easy": {
+            "right_only_correct": 2,
+            "left_only_correct": 52
+          },
+          "hard": {
+            "right_only_correct": 26,
+            "left_only_correct": 4
+          },
+          "easy_zero": {
+            "right_only_correct": 0,
+            "left_only_correct": 32
+          }
+        },
+        "dapo": {
+          "easy": {
+            "right_only_correct": 2,
+            "left_only_correct": 126
+          },
+          "hard": {
+            "right_only_correct": 32,
+            "left_only_correct": 0
+          },
+          "easy_zero": {
+            "right_only_correct": 0,
+            "left_only_correct": 102
+          }
+        },
+        "pact_grpo": {
+          "easy": {
+            "right_only_correct": 6,
+            "left_only_correct": 19
+          },
+          "hard": {
+            "right_only_correct": 13,
+            "left_only_correct": 4
+          },
+          "easy_zero": {
+            "right_only_correct": 5,
+            "left_only_correct": 0
+          }
+        },
+        "pact_vs_grpo": {
+          "easy": {
+            "right_only_correct": 24,
+            "left_only_correct": 1
+          },
+          "hard": {
+            "right_only_correct": 2,
+            "left_only_correct": 13
+          },
+          "easy_zero": {
+            "right_only_correct": 21,
+            "left_only_correct": 0
+          }
+        },
+        "pact_vs_dr_grpo": {
+          "easy": {
+            "right_only_correct": 39,
+            "left_only_correct": 2
+          },
+          "hard": {
+            "right_only_correct": 1,
+            "left_only_correct": 14
+          },
+          "easy_zero": {
+            "right_only_correct": 37,
+            "left_only_correct": 0
+          }
+        },
+        "pact_vs_dapo": {
+          "easy": {
+            "right_only_correct": 114,
+            "left_only_correct": 3
+          },
+          "hard": {
+            "right_only_correct": 0,
+            "left_only_correct": 23
+          },
+          "easy_zero": {
+            "right_only_correct": 107,
+            "left_only_correct": 0
+          }
+        }
+      }
+    }
+  },
+  "interpretation": "A hard gain with old-skill loss is measured, never assumed."
+}

@@ -9,7 +9,6 @@ from typing import Any
 @dataclass
 class ExperimentConfig:
     model_name: str
-    train_samples: int
     max_steps: int
     group_size: int
     max_prompt_tokens: int
@@ -22,7 +21,6 @@ class ExperimentConfig:
     clip_epsilon: float
     policy_epochs: int
     seed: int
-    save_every: int
     dtype: str
     gradient_checkpointing: bool
     lora_rank: int
@@ -31,11 +29,7 @@ class ExperimentConfig:
     lora_targets: list[str]
     format_reward_weight: float
     correctness_reward_weight: float
-    projection_tolerance: float
-    projection_iterations: int
-    projection_ridge: float
-    eval_gsm8k_samples: int
-    eval_math500_samples: int
+    candidate_overlap_reward_weight: float
     eval_max_new_tokens: int
 
     @classmethod

@@ -24,6 +24,7 @@ def rollout_surrogates(
     clip_epsilon: float,
     dr_grpo: bool,
     max_completion_tokens: int,
+    clip_epsilon_high: float | None = None,
 ) -> torch.Tensor:
     """One clipped policy objective per rollout; mean is the training objective.
 
@@ -37,7 +38,8 @@ def rollout_surrogates(
     ratio = (new_logprobs - old_logprobs).clamp(-20, 20).exp()
     advantage = advantages[:, None]
     unclipped = ratio * advantage
-    clipped = ratio.clamp(1 - clip_epsilon, 1 + clip_epsilon) * advantage
+    upper = clip_epsilon if clip_epsilon_high is None else clip_epsilon_high
+    clipped = ratio.clamp(1 - clip_epsilon, 1 + upper) * advantage
     token_objective = torch.minimum(unclipped, clipped) * mask
     if dr_grpo:
         denominator = float(max_completion_tokens)

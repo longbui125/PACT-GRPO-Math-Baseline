@@ -8,8 +8,7 @@ import torch
 import torch.nn.functional as F
 
 from .config import ExperimentConfig
-from .data import MathExample, format_prompt
-from .rewards import RewardBreakdown, score_completion
+from .data import ANSWER_PREFIX, MathExample, format_prompt
 
 
 @dataclass
@@ -17,8 +16,7 @@ class RolloutGroup:
     token_ids: torch.Tensor
     attention_mask: torch.Tensor
     completion_mask: torch.Tensor
-    rewards: torch.Tensor
-    breakdowns: list[RewardBreakdown]
+    texts: list[str]
 
 
 @torch.no_grad()
@@ -50,24 +48,16 @@ def generate_group(model, tokenizer, example: MathExample, config: ExperimentCon
     full_attention = torch.cat(
         [prompt_attention, completion_ids.ne(tokenizer.pad_token_id).long()], dim=1
     )
-    texts = tokenizer.batch_decode(completion_ids, skip_special_tokens=True)
-    breakdowns = [
-        score_completion(
-            text, example.answer,
-            config.correctness_reward_weight, config.format_reward_weight
-        )
-        for text in texts
+    texts = [
+        ANSWER_PREFIX + suffix
+        for suffix in tokenizer.batch_decode(completion_ids, skip_special_tokens=True)
     ]
-    rewards = torch.tensor(
-        [item.total for item in breakdowns], dtype=torch.float32, device=generated.device
-    )
     model.train()
     return RolloutGroup(
         token_ids=generated,
         attention_mask=full_attention,
         completion_mask=completion_mask,
-        rewards=rewards,
-        breakdowns=breakdowns,
+        texts=texts,
     )
 
 
